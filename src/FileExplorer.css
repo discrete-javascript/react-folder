@@ -1,0 +1,58 @@
+/* File Explorer */
+.file-explorer {
+	font-family: Arial, sans-serif;
+}
+
+/* File */
+.file {
+	margin-bottom: 5px;
+}
+
+.file-header {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
+
+.file-header span {
+	margin-left: 5px;
+}
+
+.icon {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+}
+
+.file-icon {
+	width: 15px;
+	height: 15px;
+	margin-right: 5px;
+	background-image: url('./assets/004-document.png');
+}
+
+.collapsed {
+	background-image: url('./assets/002-folder.png');
+}
+
+.expanded {
+	background-image: url('./assets/003-folder-1.png');
+}
+
+.file-content {
+	margin-left: 20px;
+}
+
+/* Highlighted Folder */
+.file.folder.highlighted {
+	background-color: #f0f0f0;
+}
+
+.popup-menu {
+	z-index: 1;
+	position: absolute;
+	background: ghostwhite;
+	border-radius: 8px;
+	cursor: pointer;
+	width: 100px;
+}
