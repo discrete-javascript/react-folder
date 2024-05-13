@@ -12,14 +12,24 @@ export const useApp = () => {
         setSelectedFile(name);
     };
 
-    const hidePopup = () => {
+    const hidePopup = (e?: React.MouseEvent) => {
+        if (e) {
+            const target = e.relatedTarget as HTMLElement;
+            if (target && target.closest('.popup-menu')) {
+                return;
+            }
+        }
         setPopupVisible(false);
     };
 
     const handleFileMenu = (e: React.MouseEvent) => {
         const target = e.target as HTMLElement;
-        console.log(target.innerText, selectedFile);
+        if (target) {
+            console.log(`Clicked on: ${target.innerText}`);
+            console.log(`Selected file: ${selectedFile}`);
+        }
     };
+
 
     return {
         popupVisible,

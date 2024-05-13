@@ -1,12 +1,19 @@
 import { useState } from 'react';
 import { FileProps } from '@app/interfaces';
 
-const File: React.FC<FileProps> = ({ type, name, meta, data, showPopup }) => {
+const File: React.FC<FileProps> = ({
+	type,
+	name,
+	data,
+	showPopup,
+	hidePopup,
+}) => {
 	const [collapsed, setCollapsed] = useState(true);
 	const [highlighted, setHighlighted] = useState(false);
 
 	const toggleCollapse = () => {
 		setCollapsed(!collapsed);
+		hidePopup && hidePopup();
 	};
 
 	const toggleHighlight = () => {
